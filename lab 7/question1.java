@@ -1,0 +1,42 @@
+import java.util.*;
+class Shape{
+    void getArea(){
+        System.out.println("No Area");
+    }
+    
+}
+class Rectangle extends Shape{
+    int length;
+    int width;
+    void getArea(){
+        System.out.println("Area of Rectangle "+length*width);
+    }
+}
+class Box extends Rectangle{
+    int height;
+    void getArea(){
+        System.out.println("Surface Area of Box " +2*(length*width+width*height+height*length));
+    }
+}
+public class Q1 {
+    public static void main(String[] args) {
+        Shape obj1= new Shape();
+        obj1.getArea();
+        Scanner sc=new Scanner(System.in);
+        Rectangle obj2=new Rectangle();
+        System.out.println("Enter lenght");
+        obj2.length=sc.nextInt();
+        System.out.println("Enter Width");
+        obj2.width=sc.nextInt();
+        obj2.getArea();
+        Box obj3=new Box();
+        System.out.println("Enter Height");
+        obj3.height=sc.nextInt();
+        obj3.length=obj2.length;
+        obj3.width=obj3.width;
+        obj3.getArea();
+        
+      
+    }
+    
+}
